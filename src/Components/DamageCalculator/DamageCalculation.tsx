@@ -16,10 +16,10 @@ const useStyles = makeStyles({
 
 export default function DamageCalculation() {
 
-    const [health, setHealth] = useState('')
-    const [stage, setStage] = useState('')
-    const [units, setUnit] = useState('')
-
+    const [ health, setHealth ] = useState('')
+    const [ stage, setStage ] = useState('')
+    const [ units, setUnit ] = useState('')
+    const [ calculatedHealth, setCalculatedHealth ] = useState('')
     const classes = useStyles()
 
     const updateHealth = (e: ChangeEvent<HTMLTextAreaElement>) => { 
@@ -29,20 +29,58 @@ export default function DamageCalculation() {
         else setHealth(String(e.currentTarget.value) ) 
     }
     const updateStage = (e: ChangeEvent<HTMLTextAreaElement>) => { 
-        setStage(String(e.currentTarget.value) ) 
+        if ( Number(e.currentTarget.value) > 7) {}
+        else setStage(String(e.currentTarget.value) ) 
     }
     const updateUnits = (e: ChangeEvent<HTMLTextAreaElement>) => { 
-        setUnit(String(e.currentTarget.value) ) 
+        if (Number(e.currentTarget.value) > 12) {}
+        else setUnit(String(e.currentTarget.value) ) 
+    }
+
+    const calculateHealth = (e: React.SyntheticEvent) => {
+        let currentHealth = Number( {health} )
+        let currentStage = Number( {stage} )
+        let currentUnits = Number( {units} )
+
+
+
+        let differentialHealth = 0;
+
+        switch (currentStage) {
+            case (3): 
+                differentialHealth = 2;
+                break;
+            case 4:
+                differentialHealth = 3;
+                break;
+            case 5: 
+                differentialHealth = 5;
+                break;
+            case 6:
+                differentialHealth = 8;
+                break;
+            case 7:
+                differentialHealth = 15;
+                break;
+        }
+
+
+        switch (currentUnits) {
+            case 1 || 2 || 3 || 4 || 5: 
+                differentialHealth += (2 * currentUnits);
+                break;
+            
+        }
     }
 
     return (
         <form className = {classes.form}>
             <FormGroup>
                 <TextField className = {classes.textField} type = "number" required value = { health } label = "Health" onChange = {updateHealth}></TextField>
-                <TextField className = {classes.textField} type = "number" required value = { stage } label = "Stage"></TextField>
-                <TextField className = {classes.textField} type = "number" required value = { units } label = "Units"></TextField>
+                <TextField className = {classes.textField} type = "number" required value = { stage } label = "Stage" onChange = {updateStage}></TextField>
+                <TextField className = {classes.textField} type = "number" required value = { units } label = "Units" onChange = {updateUnits}></TextField>
             </FormGroup>
-            <Button variant = "outlined" color = "primary">Show health</Button>
+            <Button variant = "outlined" color = "primary" onClick = {calculateHealth} >Calculate</Button>
         </form>
     )
 }
