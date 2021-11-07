@@ -1,5 +1,4 @@
 import React from 'react'
-import classes from "./Navbar.module.css"
 import { AppBar, Typography, Toolbar, Link } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 
@@ -25,15 +24,15 @@ export default function Navbar() {
     let classes = useStyles()
 
     return (
-        <AppBar sx = {{backgroundColor: 'rgba(20,20,20,0.5)'}} position = "relative">
+        <AppBar sx = {{backgroundColor: 'rgba(10,70,150, 0.85)'}} position = "relative">
             <Toolbar sx = {{ display: 'flex', justifyContent: 'space-between' }}>
                 <Typography variant = "h5">
                     TFT.Macro
                 </Typography>
                 <Typography>
                     <div className = {classes.NavbarLinks}>
-                        <Link className = {classes.NavbarLink}>Damage Calculator</Link>
-                        <Link className = {classes.NavbarLink}>Gold</Link>
+                        <Link href = "/dmg" className = {classes.NavbarLink}>Damage Calculator</Link>
+                        <Link href = "/gold" className = {classes.NavbarLink}>Gold</Link>
                     </div>
                 </Typography>
             </Toolbar>
