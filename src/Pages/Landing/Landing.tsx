@@ -1,9 +1,9 @@
+// eslint-disable-line
 import React from 'react'
-import Navbar from '../../Components/Navbar/Navbar'
 import { Typography} from '@mui/material'
-import {Link} from 'react-router-dom'
 import { makeStyles } from '@mui/styles'
-
+import CompositionsContainer from '../../Containers/CompositionsContainer/CompositionsContainer'
+import PageLayout from '../../Layout/PageLayout'
 
 const useStyles  = makeStyles({
     landingText: {
@@ -41,8 +41,7 @@ export default function Landing() {
 
     const classes = useStyles()
     return (
-        <div>
-            <Navbar />
+        <PageLayout>
             <div className = {classes.landingText}>
                 <Typography variant = "h5"> 
                     Welcome to TFT.Macro
@@ -51,19 +50,10 @@ export default function Landing() {
                     The spot for learning more about Teamfight Tactics
                 </Typography>
             </div>
-
-
-            <div>
-                <Typography>
-                    Get Started Here
-                </Typography>
-                <div className = {classes.gettingStarted}>
-                    <Link className = {classes.gettingStartedButton} to = "/gold">Gold</Link>
-                    <Link className = {classes.gettingStartedButton} to = "/dmg">Damage Calculator</Link>
-                </div>
-            </div>
-
-
-        </div>
+            <Typography variant = "h4" sx = {{textAlign: 'center', margin: '20px auto'}}>
+                Top Compositions
+            </Typography>
+            <CompositionsContainer />
+        </PageLayout>
     )
 }

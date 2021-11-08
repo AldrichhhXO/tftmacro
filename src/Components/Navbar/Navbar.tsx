@@ -9,15 +9,27 @@ const useStyles  = makeStyles({
         height: '100px'
     },
     NavbarLinks: {
-        
-        width: '20vw',
+        width: '50%',
         display: 'flex',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        
+        
     },
     NavbarLink: {
         color: 'white',
-        textDecoration: 'none'
-    }
+        textDecoration: 'none',
+        fontSize: '18px',
+        '&:after' : {
+            content: '',
+            display: 'block',
+            height: '5px',
+            color: 'red',
+            width: '100%',
+            
+        }
+        
+    },
+
 })
 
 export default function Navbar() {
@@ -27,16 +39,16 @@ export default function Navbar() {
         <AppBar sx = {{backgroundColor: 'rgba(10,70,150, 0.85)'}} position = "relative">
             <Toolbar sx = {{ display: 'flex', justifyContent: 'space-between' }}>
                 <Typography variant = "h5">
-                    TFT.Macro
+                    <Link href = "/" sx = {{textDecoration: 'none', color: 'white'}}>TFT.Macro</Link>
                 </Typography>
-                <Typography>
+              
                     <div className = {classes.NavbarLinks}>
                         <Link href = "/dmg" className = {classes.NavbarLink}>Damage Calculator</Link>
                         <Link href = "/gold" className = {classes.NavbarLink}>Gold</Link>
+                        <Link href = "/team-comps" className = {classes.NavbarLink}>Team Comps</Link>
+                        <Link href = "" className = {classes.NavbarLink}>Stats</Link>
                     </div>
-                </Typography>
             </Toolbar>
-
         </AppBar>
     )
 }
