@@ -46,7 +46,7 @@ export default function Navbar() {
                         <Link href = "/dmg" className = {classes.NavbarLink}>Damage Calculator</Link>
                         <Link href = "/gold" className = {classes.NavbarLink}>Gold</Link>
                         <Link href = "/team-comps" className = {classes.NavbarLink}>Team Comps</Link>
-                        <Link href = "" className = {classes.NavbarLink}>Stats</Link>
+                        <Link href = "/stats" className = {classes.NavbarLink}>Stats</Link>
                     </div>
             </Toolbar>
         </AppBar>

@@ -4,6 +4,7 @@ import Landing from './Pages/Landing/Landing';
 import Compositions from './Pages/Compositions/Compositions';
 import Error from './Pages/Error/Error';
 import Gold from './Pages/Gold/Gold';
+import Stats from './Pages/Stats/Stats';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import DamageCalculator from './Pages/DamageCalculator/DamageCalculator';
 
@@ -15,6 +16,7 @@ function App() {
         <Route exact path = "/dmg" render = {() => <DamageCalculator /> } />
         <Route exact path = "/gold" render = {() => <Gold/> } />
         <Route exact path = "/team-comps" render = {() => <Compositions/> } />
+        <Route exact path = "/stats" render = {() => <Stats /> }/>        
         <Route path = "*" render = {() => <Error />} />
       </Switch>
     </Router>
