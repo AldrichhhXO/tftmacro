@@ -15,7 +15,7 @@ export default function Composition() {
 
     return (
         <Card className = {classes.composition} variant = "outlined">
-            <Typography variant = "h4">Johnny Sins Assassins</Typography>
+            <Typography variant = "h4">Innovator Jayce</Typography>
             <div >
                 Composition Components
             </div>

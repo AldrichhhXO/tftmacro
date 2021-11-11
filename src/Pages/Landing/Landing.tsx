@@ -39,6 +39,7 @@ const useStyles  = makeStyles({
 })
 export default function Landing() {
 
+    document.title = "TFT.Macro | Welcome"
     const classes = useStyles()
     return (
         <PageLayout>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Table, TableHead, TableBody, TableCell, Card } from '@mui/material'
+import { Typography, Table, TableHead, TableBody, TableCell, Card, TableRow } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import Navbar from '../../Components/Navbar/Navbar'
 
@@ -23,7 +23,11 @@ const useStyles = makeStyles({
         border: '1px solid black'
     },
     economySection: {
-
+        width: '80%',
+        margin: 'auto'
+    },
+    economyCardText: {
+        border: '1px solid black'
     }
 })
 
@@ -49,9 +53,9 @@ export default function Gold() {
             </Typography>
             <Table className = {classes.Table}>
                 <TableHead>
-                    <TableCell>
-                        
-                    </TableCell>
+                    <TableRow>
+
+                    </TableRow>
                 </TableHead>
                 <TableBody>
                     <TableCell> 5</TableCell>
@@ -73,7 +77,7 @@ export default function Gold() {
             <section className = {classes.economySection}>
                 <Card variant = "outlined">
                     <Typography variant = "h4">Slow Roll</Typography>
-                    <p>
+                    <p className = {classes.economyCardText}>
                         This method is primarily a greedy type of economy where you will 
                         reach 50 gold as fast as possible and reroll every round to be able to hit the champs that you need
                     </p>
@@ -87,6 +91,11 @@ export default function Gold() {
                 </Card>
                 <Card variant = "outlined">
                     <Typography variant = "h4">Fast 8</Typography>
+                    <p>
+                        This method is primarily good for comps that reach their maximum potential once they reach the later portion of the game.
+                        With this method you're not holding 50 gold as much throughout the game. Instead, you are pushing levels so that you're the first
+                        to be able 
+                    </p>
                 </Card>
 
             </section>

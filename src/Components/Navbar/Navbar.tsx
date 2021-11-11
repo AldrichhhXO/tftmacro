@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppBar, Typography, Toolbar, Link } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-
+import MenuIcon from '@mui/icons-material/Menu';
 
 const useStyles  = makeStyles({
     Navbar: {
@@ -24,12 +24,12 @@ const useStyles  = makeStyles({
             display: 'block',
             height: '5px',
             color: 'red',
-            width: '100%',
-            
-        }
-        
+            width: '100%',   
+        } 
     },
-
+    menuIcon: {
+        cursor: 'pointer'
+    }
 })
 //
 export default function Navbar() {
@@ -48,6 +48,7 @@ export default function Navbar() {
                         <Link href = "/team-comps" className = {classes.NavbarLink}>Team Comps</Link>
                         <Link href = "/stats" className = {classes.NavbarLink}>Stats</Link>
                     </div>
+                    <MenuIcon className = {classes.menuIcon}></MenuIcon>
             </Toolbar>
         </AppBar>
     )
