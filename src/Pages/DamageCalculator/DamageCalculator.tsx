@@ -34,6 +34,9 @@ const useStyles = makeStyles({
             fontSize: '17px',
             lineHeight: '30px'
         },
+        ['@media only screen and (min-width: 700px)']: {
+            fontSize: '19px'
+        }
         
     },
 })

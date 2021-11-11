@@ -26,8 +26,24 @@ const useStyles = makeStyles({
         width: '80%',
         margin: 'auto'
     },
+    economyCard: {
+        margin: '20px auto',
+        height: '100%',
+        minHeight: '200px',
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column'
+    },
+    economyCardTitle: {
+        width: '98%',
+        margin: 'auto',
+        marginTop: '10px'
+    },
     economyCardText: {
-        border: '1px solid black'
+        width: '90%',
+        margin: '10px auto',
+        fontSize: '18px ',
+        lineHeight: '25px'
     }
 })
 
@@ -75,13 +91,13 @@ export default function Gold() {
             </p>
 
             <section className = {classes.economySection}>
-                <Card variant = "outlined">
-                    <Typography variant = "h4">Slow Roll</Typography>
+                <Card variant = "outlined" className = {classes.economyCard}>
+                    <Typography variant = "h4" className = {classes.economyCardTitle}>Slow Roll</Typography>
                     <p className = {classes.economyCardText}>
                         This method is primarily a greedy type of economy where you will 
                         reach 50 gold as fast as possible and reroll every round to be able to hit the champs that you need
                     </p>
-                    <p>
+                    <p className = {classes.economyCardText}>
                         <strong>Note: </strong> It is generally good practice to hold 50 gold as long as possible because of the amount of interest you earn each round
                         but <strong>Make sure</strong> you aren't being too greedy by losing too much health. If you need to stabilize your comp be sure to do so.
                     </p>
@@ -89,15 +105,14 @@ export default function Gold() {
                         
                     </p>
                 </Card>
-                <Card variant = "outlined">
-                    <Typography variant = "h4">Fast 8</Typography>
-                    <p>
+                <Card variant = "outlined" className = {classes.economyCard}>
+                    <Typography variant = "h4" className = {classes.economyCardTitle}>Fast 8</Typography>
+                    <p className = {classes.economyCardText}>
                         This method is primarily good for comps that reach their maximum potential once they reach the later portion of the game.
                         With this method you're not holding 50 gold as much throughout the game. Instead, you are pushing levels so that you're the first
                         to be able 
                     </p>
                 </Card>
-
             </section>
         </div>
     )
