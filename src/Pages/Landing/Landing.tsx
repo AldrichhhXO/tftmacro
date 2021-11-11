@@ -51,10 +51,13 @@ export default function Landing() {
                     The spot for learning more about Teamfight Tactics
                 </Typography>
             </div>
-            <Typography variant = "h4" sx = {{textAlign: 'center', margin: '20px auto'}}>
-                Top Compositions
-            </Typography>
-            <CompositionsContainer />
+            <div style = {{width: '100%'}}>
+                <Typography variant = "h4" sx = {{textAlign: 'center', margin: '20px auto'}}>
+                    Top Compositions
+                </Typography>
+                <CompositionsContainer />
+            </div>
+
         </PageLayout>
     )
 }

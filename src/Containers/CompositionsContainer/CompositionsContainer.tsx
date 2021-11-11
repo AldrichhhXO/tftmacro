@@ -8,7 +8,6 @@ const useStyles = makeStyles({
     table: {
         width: '50%',
         margin: 'auto',
-        border: '1px solid gray'
     }
 })
 
@@ -17,9 +16,9 @@ export default function CompositionsContainer() {
     const classes = useStyles()
     return (
         <Table className = {classes.table}>
-             <Composition />
-             <Composition />
-             <Composition />
+             <Composition compositionNickname = "Innovator Jayce" />
+             <Composition compositionNickname = "7 Syndicate Akali / Shaco Carry" />
+             <Composition compositionNickname = "Yordle Portal" />
         </Table>
            
        
