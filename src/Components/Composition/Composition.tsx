@@ -44,7 +44,7 @@ export default function Composition(props: any) {
     const Champion = () => {
         return (
             <div className = {classes.champion}>
-                A
+                Al
             </div>
         )
 
