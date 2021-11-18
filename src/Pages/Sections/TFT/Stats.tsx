@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import Axios from '../../API/Axios'
-import PageLayout from '../../Layout/PageLayout'
+import Axios from '../../../API/Axios'
+import PageLayout from '../../../Layout/PageLayout'
 import { Typography } from '@mui/material'
 import {Table, TableHead, TableRow, TableBody, TableCell } from '@mui/material'
 import { makeStyles } from '@mui/styles'
@@ -43,7 +43,7 @@ export default function Stats() {
     
 
     return (
-        <PageLayout>
+        <PageLayout type = "tft">
             <Typography variant = "h4" className = {classes.pageHeaderText}>Top Players in TFT.</Typography>
             <p className = {classes.pageText}>
                 Note: Since this app is currently in development sometimes the results might not show up right away

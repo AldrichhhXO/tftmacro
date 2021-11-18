@@ -1,8 +1,8 @@
 import React from 'react'
 import { Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import DamageCalculation from '../../Components/DamageCalculator/DamageCalculation'
-import PageLayout from '../../Layout/PageLayout'
+import DamageCalculation from '../../../Components/DamageCalculator/DamageCalculation'
+import PageLayout from '../../../Layout/PageLayout'
 
 const useStyles = makeStyles({
     table: {
@@ -105,7 +105,7 @@ export default function DamageCalculator() {
     
 
     return (
-        <PageLayout>
+        <PageLayout type = "tft">
             <Typography sx = {{textAlign: 'center', margin: ' auto', marginTop: '50px'}} variant = "h4">Damage Calculation</Typography>
             <p className = {classes.dmgCalculationText} >
                 Damage calculation is a topic that is often overlooked, most people believing that damage is just damage. However, in reality, it allows you to

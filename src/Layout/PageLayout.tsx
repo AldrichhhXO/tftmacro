@@ -7,15 +7,19 @@ const useStyles = makeStyles({
 
         width: '100vw',
         height: '100vh',
-
     }
 })
 
-export default function PageLayout(props: any) {
+interface LayoutProps {
+    children?: any,
+    type?: String
+}
+
+export default function PageLayout(props: LayoutProps) {
     const classes = useStyles()
     return (
         <div className = {classes.pageLayout}>
-            <Navbar />
+            <Navbar type = {props.type}/>
             {props.children}
         </div>
     )

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Typography, Table, TableHead, TableBody, TableCell, Card, TableRow } from '@mui/material'
+import PageLayout from '../../../Layout/PageLayout'
 import { makeStyles } from '@mui/styles'
-import Navbar from '../../Components/Navbar/Navbar'
+import Navbar from '../../../Components/Navbar/Navbar'
 
 const useStyles = makeStyles({
     pageTitle: {
@@ -51,7 +52,7 @@ export default function Gold() {
     document.title = "TFT.Macro | Gold Overview"
     const classes = useStyles()
     return (
-        <div>
+        <PageLayout type = "tft">
             <Navbar />
 
             <p className = {classes.pageDescription}>
@@ -114,6 +115,6 @@ export default function Gold() {
                     </p>
                 </Card>
             </section>
-        </div>
+        </PageLayout>
     )
 }
