@@ -81,11 +81,6 @@ export default function Navbar(props: any) {
                 <Typography variant = "h5">
                     <Link href = "/" sx = {{textDecoration: 'none', color: 'white'}}>Academy.gg</Link>
                 </Typography>
-                <div className = {classes.sectionContainer}>
-                        <Link href = "/lol" className = {`${classes.NavbarLink} ${classes.section}`}>League of Legends</Link>
-                        <Link href = "/tft" className = {`${classes.NavbarLink} ${classes.section}`}>Teamfight Tactics</Link>
-                      
-                </div>
               
                     <div className = {classes.NavbarLinks}>
                         { LinkComponents }

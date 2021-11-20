@@ -1,9 +1,10 @@
 import React from 'react'
+import PageLayout from '../../../Layout/PageLayout'
 
 export default function LeagueOverview() {
     return (
-        <div>
-            d
-        </div>
+        <PageLayout>
+            
+        </PageLayout>
     )
 }

@@ -4,6 +4,8 @@ import { Typography} from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import CompositionsContainer from '../../Containers/CompositionsContainer/CompositionsContainer'
 import PageLayout from '../../Layout/PageLayout'
+import SiteSelector from '../../Components/SiteSelector/SiteSelector'
+import PlayerSearch from '../../Components/PlayerSearch/PlayerSearch'
 
 const useStyles  = makeStyles({
     landingText: {
@@ -43,14 +45,8 @@ export default function Landing() {
     const classes = useStyles()
     return (
         <PageLayout>
-            <div className = {classes.landingText}>
-                <Typography variant = "h5"> 
-                    Welcome to TFT.Macro
-                </Typography>
-                <Typography variant = "h5">
-                    The spot for learning more about Teamfight Tactics
-                </Typography>
-            </div>
+            <SiteSelector />
+            <PlayerSearch />
             <div style = {{width: '100%'}}>
                 <Typography variant = "h4" sx = {{textAlign: 'center', margin: '20px auto'}}>
                     Top Compositions

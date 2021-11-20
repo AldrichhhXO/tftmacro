@@ -6,7 +6,7 @@ import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
     table: {
-        width: '50%',
+        width: '35%',
         margin: 'auto',
     }
 })
