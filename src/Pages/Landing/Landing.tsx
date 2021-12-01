@@ -45,7 +45,6 @@ export default function Landing() {
     const classes = useStyles()
     return (
         <PageLayout>
-            <SiteSelector />
             <PlayerSearch />
             <div style = {{width: '100%'}}>
                 <Typography variant = "h4" sx = {{textAlign: 'center', margin: '20px auto'}}>

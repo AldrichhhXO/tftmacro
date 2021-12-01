@@ -1,30 +1,58 @@
 import React from 'react'
 import CompositionsContainer from '../../../Containers/CompositionsContainer/CompositionsContainer'
 import PageLayout from '../../../Layout/PageLayout'
-import { Button } from '@mui/material'
+import TftPageLayout from '../../../Layout/TftPageLayout'
+import { Button, Card, TextField } from '@mui/material'
 
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
     tftNavbar: {
-        width: '40%',
+        width: '100%',
         border: '1px solid black',
         display: 'flex',
-        justifyContent: 'space-around',
-        margin: ' 20px auto'
+        margin: ' 0px auto'
+    },
+    tftSearch: {
+        width: '45%',
+        height: '70px',
+        margin: 'auto',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    RegionSelect: {
+        height: '40px',
+        fontSize: '20px',
+        background: 'cyan'
+    },
+    buttonContainer: {
+        width: '80%',
+        margin: 'auto'
+    },
+    tftNavbarButton: {
+        margin: '0px 20px',
+        fontSize: '17px'
     }
 })
 
 export default function TftOverview() {
     const classes = useStyles()
     return (
-        <PageLayout>
-            <div className = {classes.tftNavbar}>
-                <Button>Items</Button>
-                <Button>Augments</Button>
-                <Button>Champions</Button>
-            </div>            
+        <TftPageLayout>
+        
+            <Card variant = "outlined" className = {classes.tftSearch}>
+                <TextField size = "small" type = "text" />
+                <select className = {classes.RegionSelect}>
+                    <option>NA</option>
+                    <option>EU</option>
+                    <option>BR</option>
+                    <option>KR</option>
+                </select>
+                <Button variant = "outlined">Search</Button>
+            </Card>
+
             <CompositionsContainer />
-        </PageLayout>
+        </TftPageLayout>
     )
 }

@@ -18,16 +18,23 @@ const useStyles  = makeStyles({
         alignItems: 'center'
     },
     NavbarLinks: {
-        width: '50%',
+        width: 'fit-content',
         display: 'flex',
         justifyContent: 'space-around',
+        border:'1px solid black',
+        marginLeft: '20px',
+        height: '60px'
         
         
     },
     NavbarLink: {
         color: 'white',
+        width: '250px',
         textDecoration: 'none',
-        fontSize: '18px',
+        fontSize: '22px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         '&:after' : {
             content: '',
             display: 'block',
@@ -37,7 +44,7 @@ const useStyles  = makeStyles({
         } 
     },
     section: {
-        backgroundColor: 'rgba(10,70,150, 0.90)'
+        backgroundColor: 'darkcyan'
     },
     menuIcon: {
         cursor: 'pointer'
@@ -56,6 +63,11 @@ let tftLinks : LinkObject[] = [
     {link: "/team-comps",label: "Compositions"},
     {link: "/stats", label: "Stats"}]
 
+let starterLinks : LinkObject[] = [
+    {link: "/tft", label: "Teamfight Tactics"},
+    {link: "/lol", label: "League of Legends"}
+]
+
 //
 export default function Navbar(props: any) {
     let classes = useStyles()
@@ -67,6 +79,8 @@ export default function Navbar(props: any) {
         case 'tft':
             links = tftLinks
             break;
+        default:
+            links = starterLinks
     }
 
     const LinkComponents = links?.map((link, key) => {
@@ -76,20 +90,14 @@ export default function Navbar(props: any) {
     })
 
     return (
-        <AppBar sx = {{backgroundColor: 'rgba(10,70,150, 0.85)'}} position = "relative">
-            <Toolbar sx = {{ display: 'flex', justifyContent: 'space-between' }}>
+        <AppBar sx = {{backgroundColor: 'rgba(30,30,30, 0.85)'}} position = "relative">
+            <Toolbar>
                 <Typography variant = "h5">
                     <Link href = "/" sx = {{textDecoration: 'none', color: 'white'}}>Academy.gg</Link>
                 </Typography>
               
                     <div className = {classes.NavbarLinks}>
                         { LinkComponents }
-                        {/*
-                        <Link href = "/dmg" className = {classes.NavbarLink}>Damage Calculator</Link>
-                        <Link href = "/gold" className = {classes.NavbarLink}>Gold</Link>
-                        <Link href = "/team-comps" className = {classes.NavbarLink}>Team Comps</Link>
-                        <Link href = "/stats" className = {classes.NavbarLink}>Stats</Link>
-                        */}
                     </div>
             </Toolbar>
         </AppBar>

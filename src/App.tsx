@@ -11,9 +11,12 @@ import DamageCalculator from './Pages/Sections/TFT/DamageCalculator';
 import Gold from './Pages/Sections/TFT/Gold';
 import Compositions from './Pages/Sections/TFT/Compositions';
 import Stats from './Pages/Sections/TFT/Stats';
+import Player from './Pages/Sections/TFT/Player';
+import Traits from './Pages/Sections/TFT/Traits';
+import Champions from './Pages/Sections/TFT/Champions';
 
-import Champions from './Pages/Sections/LOL/Champions';
 import LeagueOverview from './Pages/Sections/LOL/LeagueOverview';
+import Augments from './Pages/Sections/TFT/Augments';
 
 
 
@@ -23,13 +26,15 @@ function App() {
       <Switch>
         <Route exact path = "/" render = {() => <Landing /> } />
        
-        
-
         <Route exact path = "/tft" render = {() => <TftOverview />} />
         <Route exact path = "/tft/dmg" render = {() => <DamageCalculator /> } />
         <Route exact path = "/tft/gold" render = {() => <Gold/> } />
         <Route exact path = "/tft/compositions" render = {() => <Compositions/> } />
         <Route exact path = "/tft/stats" render = {() => <Stats /> }/>  
+        <Route path = "/tft/player" render = {() => <Player /> }/>  
+        <Route path = "/tft/traits" render = {() => <Traits /> } />
+        <Route path = "/tft/augments" render = {() => <Augments />} />
+        <Route path = "/tft/champions" render = {() => <Champions />} />
 
         <Route exact path = "/lol/" render = {() => <LeagueOverview/> } />
         <Route exact path = "/lol/champions" render = {() => <Champions /> }/>  
