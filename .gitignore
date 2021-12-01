@@ -24,3 +24,12 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+
+
+# Static Files
+
+/src/static
+
+# Temporary
+
+/Server
