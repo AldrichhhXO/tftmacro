@@ -2,7 +2,7 @@ import React from 'react'
 import CompositionsContainer from '../../../Containers/CompositionsContainer/CompositionsContainer'
 import PageLayout from '../../../Layout/PageLayout'
 import TftPageLayout from '../../../Layout/TftPageLayout'
-import { Button, Card, TextField } from '@mui/material'
+import { Button, Card, TextField, Typography } from '@mui/material'
 
 import { makeStyles } from '@mui/styles'
 
@@ -42,6 +42,7 @@ export default function TftOverview() {
         <TftPageLayout>
         
             <Card variant = "outlined" className = {classes.tftSearch}>
+                <Typography variant = "h5">Search for a player</Typography>
                 <TextField size = "small" type = "text" />
                 <select className = {classes.RegionSelect}>
                     <option>NA</option>
@@ -51,8 +52,9 @@ export default function TftOverview() {
                 </select>
                 <Button variant = "outlined">Search</Button>
             </Card>
-
+            {/** 
             <CompositionsContainer />
+            */}
         </TftPageLayout>
     )
 }

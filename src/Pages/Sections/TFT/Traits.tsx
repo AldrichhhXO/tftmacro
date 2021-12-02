@@ -2,7 +2,7 @@ import React from 'react'
 import TftPageLayout from '../../../Layout/TftPageLayout'
 import GridLayout from '../../../Layout/GridLayout'
 import traits from '../../../static/Teamfight Tactics/TFT.json'
-import TraitCard from '../../../Components/TraitCard/TraitCard'
+import TraitCard from '../../../Components/TFT/TraitCard'
 
 
 /**

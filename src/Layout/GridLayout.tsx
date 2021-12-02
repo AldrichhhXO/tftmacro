@@ -3,11 +3,11 @@ import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
     GridLayout: {
-        width: '60%',
+        width: '80%',
         border: '1px solid black',
         margin: 'auto',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'
+        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))'
     }
 })
 
