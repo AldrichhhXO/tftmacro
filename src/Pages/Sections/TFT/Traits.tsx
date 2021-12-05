@@ -16,17 +16,36 @@ import TraitCard from '../../../Components/TFT/TraitCard'
  * 
  */
 
+
+
 export default function Traits() {
     document.title = "Academy.GG | Traits and Classes"
-
-    console.log(traits.setData[2].traits)
     let traitsArray = traits.setData[2].traits
 
-    let traitCards = traitsArray.map((trait) => {
 
 
 
-        return (<TraitCard key = {trait.apiName} traitName = {trait.name} traitDesc = {trait.desc} />)
+    let traitCards = traitsArray.map((trait,index) => {
+        let effectsArray = trait.effects
+        
+
+
+
+        let tester = effectsArray.map((effect) => {
+
+            // Object.values(effect.variables) // Returns an array of the values of each trait (1 Dimensional)
+            console.log(Object.values(effect.variables))
+            //console.log(`Min: ${effect.minUnits} , Bonus: ${effect.variables}`)
+            return Object.values(effect.variables)
+        })
+
+        let minUnitsArray = effectsArray.map((yee) => {
+            // console.log(yee.maxUnits)
+            return yee.minUnits
+        })
+        //console.log(minUnitsArray)
+
+        return (<TraitCard key = {index} traitName = {trait.name} traitDesc = {trait.desc} minUnits = { minUnitsArray } traitValues = { tester } />)
     })
 
     return (
@@ -34,7 +53,6 @@ export default function Traits() {
             <GridLayout>
                 { traitCards }
             </GridLayout>
-        
         </TftPageLayout>
     )
 }

@@ -21,7 +21,7 @@ export default function Champions() {
     document.title = "Academy.GG | Champions"
 
     let championsArray = Champs.setData[2].champions
-    console.log(championsArray)
+    // console.log(championsArray)
     let excludedChampions = ['Target Dummy', 'Mechanical Dragon', 'Mechanical Bear', 'Tome of Traits', 'Mechanical Scarab', 'Mercenary']
     //let championOrigins = ['Academy', 'Chemtech', 'Clockwork', 'Cuddly', 'Enforcer', 'Glutton', 'Imperial', 'Mercenary', 'Mutant', 'Scrap', 'Sister', 'Socialite', 'Syndicate', 'Yordle', 'Yordle-Lord']
    

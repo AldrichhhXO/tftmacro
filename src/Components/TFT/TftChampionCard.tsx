@@ -71,9 +71,10 @@ export default function TftChampionCard({ championName, championAbilityDesc, cha
         return (<p className = {classes.abilityDescription}>{ text }</p>)
     })
     
-    // console.log(championAbilityVariables)
+     console.log(championAbilityVariables)
 
     let championAbilityModifiers = championAbilityVariables.map((modifier: any) => {
+        // console.log("heyy" + modifier)
         return (<p style = {{margin: '5px 0px'}}><b>{modifier.name}</b>: {modifier.value}</p>)  
     })
 
