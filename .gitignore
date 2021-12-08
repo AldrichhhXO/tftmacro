@@ -28,8 +28,16 @@ yarn-error.log*
 
 # Static Files
 
-/src/static
+/src/static/
 
 # Temporary
 
-/Server
+
+### Excluded Server Files
+
+# Environment
+/Server/.env
+
+#Static Files (Both Server and Client)
+/Server/Assets
+

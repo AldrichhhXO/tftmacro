@@ -44,12 +44,7 @@ export default function TftOverview() {
             <Card variant = "outlined" className = {classes.tftSearch}>
                 <Typography variant = "h5">Search for a player</Typography>
                 <TextField size = "small" type = "text" />
-                <select className = {classes.RegionSelect}>
-                    <option>NA</option>
-                    <option>EU</option>
-                    <option>BR</option>
-                    <option>KR</option>
-                </select>
+
                 <Button variant = "outlined">Search</Button>
             </Card>
             {/** 

@@ -1,41 +1,30 @@
 const express = require('express');
-const axios = require('axios')
-//const PlayerRouter = require('./Routes/Player')
-const path = require('path')
+const path = require('path');
 const app = express();
-const FileWriter = require('./Tools/FileWriter')
 
-const tftItems = require('./assets/TFT/TFT_Items.json')
+const dotenv = require('dotenv').config()
+const logger = require('morgan')
 
-//app.use('/tft', PlayerRouter)
+// Router initialization
+const TFTRouter = require('./Routes/TFTRouter')
 
-let headers = {
-    'X-Riot-Token': 'RGAPI-71759e7f-fa31-4118-8fa1-2db8954c2fb5'
-}
+// Helper function to make sure all of the static assets are available.
+const { retrieveSetFile } = require('./Tools/FileWriter');
 
-// Getting Summoner by Name
-//const summoner = await axios.get('https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/FadedOffTheHenny', {headers})
-// Retrieve SummonerID with res.data.id
+// retrieveSetFile()
 
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+app.use(logger('dev'))
 
-// Grabbing the current league standings based off of the encrypted summoner ID (id)
-/*
-axios.get('https://na1.api.riotgames.com/tft/league/v1/entries/by-summoner/1qfaLCPh9y_yDpWA_8A2H9I3fG4Cf-HpGAJoEiSDXWk4KoA', {headers})
-    .then(res => console.log(res.data))
-    */
+// Retrieve the static files to render web application through the server
+const buildPath = path.join(__dirname, "..", "build")
+app.use(express.static(buildPath))
 
+// Connecting app to Routers
+app.use('/tft', TFTRouter)
 
-let url1 = 'https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/FadedOffTheHenny'
-let url2 = 'https://na1.api.riotgames.com/tft/league/v1/entries/by-summoner/1qfaLCPh9y_yDpWA_8A2H9I3fG4Cf-HpGAJoEiSDXWk4KoA'
+// Sending static files on every request
+app.get('/*', (req, res) => res.sendFile(path.join(buildPath, "index.html")))
 
-//const buildPath = path.resolve()
-
-//app.use(express.static())
-
-app.get('*', (req, res, next) => {
-    res.sendFile()
-})
-
-FileWriter.writeTftFile()
-
-// app.listen(3000)
+app.listen(3000)

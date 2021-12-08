@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import Axios from '../../../API/Axios'
 import PageLayout from '../../../Layout/PageLayout'
 import { Typography } from '@mui/material'
 import {Table, TableHead, TableRow, TableBody, TableCell } from '@mui/material'
@@ -33,13 +32,6 @@ export default function Stats() {
     document.title = "TFT.Macro | Top players in TFT"
     const [players, setPlayers] = useState('')
 
-    useEffect(() => {
-        Axios.get('/tft/league/v1/challenger')
-        .then(res => {
-            // setPlayers('')
-        })
-        .catch()
-    })
     
 
     return (
